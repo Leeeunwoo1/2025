@@ -65,7 +65,7 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("내 몸 건강 식탁")
+st.title("증상별 음식 ")
 st.write("본 애플리케이션은 증상별 건강 음식 정보를 제공합니다. 목록에서 해당 증상을 선택하여 주십시오.")
 
 st.markdown("---")
@@ -120,4 +120,4 @@ else:
     st.write("상단의 드롭다운 메뉴에서 증상을 선택하여 관련 정보를 확인하십시오.")
 
 st.markdown("---")
-st.write("내 몸 건강 식탁 애플리케이션")
+st.write("증상별 음식식 애플리케이션")

@@ -60,7 +60,7 @@ health_data = {
 }
 
 st.set_page_config(
-    page_title="내 몸 건강 식탁",
+    page_title="증상별 음식",
     page_icon="❤️",
     layout="centered"
 )

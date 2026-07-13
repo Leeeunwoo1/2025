@@ -289,62 +289,70 @@ elif menu == "벚나무":
 벚나무는 장미과 식물이라
 사과나무, 복숭아나무, 매화나무와 가까운 친척입니다.
 """)
-
 # -----------------------
-# 식물 퀴즈
+# 🎮 식물 퀴즈
 # -----------------------
 elif menu == "식물 퀴즈":
 
     st.header("🎮 식물 퀴즈")
-
-    score = 0
+    st.write("배운 내용을 얼마나 기억하고 있는지 확인해 보세요!")
 
     q1 = st.radio(
-        "① 동신여자고등학교의 교목은?",
+        "① 동신여자고등학교의 교목은 무엇일까요?",
         ["향나무", "벚나무", "목련"],
+        index=None,
         key="q1"
     )
 
-    if q1 == "향나무":
-        score += 1
-
     q2 = st.radio(
-        "② 동신여자고등학교의 교화는?",
+        "② 동신여자고등학교의 교화는 무엇일까요?",
         ["철쭉", "목련", "벚나무"],
+        index=None,
         key="q2"
     )
 
-    if q2 == "철쭉":
-        score += 1
-
     q3 = st.radio(
-        "③ 진달래와 비슷하지만 먹으면 안 되는 꽃은?",
+        "③ 진달래와 비슷하지만 먹으면 안 되는 꽃은 무엇일까요?",
         ["철쭉", "목련", "벚나무"],
+        index=None,
         key="q3"
     )
 
-    if q3 == "철쭉":
-        score += 1
-
     q4 = st.radio(
-        "④ 향기로운 냄새 때문에 이름이 붙은 나무는?",
+        "④ 향기로운 냄새 때문에 이름이 붙은 나무는 무엇일까요?",
         ["향나무", "벚나무", "목련"],
+        index=None,
         key="q4"
     )
 
-    if q4 == "향나무":
-        score += 1
+    if st.button("🎯 결과 확인"):
 
-    if st.button("결과 확인"):
-
-        st.success(f"🎉 점수 : {score} / 4점")
-
-        if score == 4:
-            st.balloons()
-            st.success("축하합니다! 🌿 식물 박사입니다!")
-
-        elif score >= 2:
-            st.info("잘했어요! 조금만 더 공부하면 만점입니다.")
+        if q1 is None or q2 is None or q3 is None or q4 is None:
+            st.warning("⚠️ 모든 문제에 답을 선택해주세요!")
 
         else:
-            st.warning("다시 식물도감을 읽어보고 도전해 보세요!")
+            score = 0
+
+            if q1 == "향나무":
+                score += 1
+
+            if q2 == "철쭉":
+                score += 1
+
+            if q3 == "철쭉":
+                score += 1
+
+            if q4 == "향나무":
+                score += 1
+
+            st.success(f"🎉 결과 : {score} / 4점")
+
+            if score == 4:
+                st.balloons()
+                st.success("🏆 만점입니다! 식물 박사입니다!")
+
+            elif score >= 2:
+                st.info("🌿 잘했습니다! 조금 더 공부하면 만점이에요!")
+
+            else:
+                st.warning("📖 식물도감을 다시 읽고 다시 도전해보세요!")

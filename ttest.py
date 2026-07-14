@@ -342,7 +342,7 @@ elif menu == "식물 퀴즈":
             if q2 == "철쭉":
                 score += 1
 
-            if q3 == "철쭉":
+            if q3 == "목련":
                 score += 1
 
             if q4 == "향나무":
